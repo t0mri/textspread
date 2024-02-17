@@ -59,3 +59,4 @@ for i in range(0, len(lineTokens), 8):
     ws.append((question, optA, optB, optC, optD, ans, exp))
 
 wb.save(XLFILEPATH)
+exit(EXIT_SUCCESS)
