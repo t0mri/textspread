@@ -8,36 +8,34 @@ EXIT_ERROR_INVALID_ARGS_AMOUNT = 1
 EXIT_ERROR_INVALID_ARGS = 2
 EXIT_ERROR_FILE_NOT_FOUND = 3
 
-ERROR_ARGS = """
+MSG_USAGE = "Usage: main.py <file.xlsx> <file.txt>\n"
+MSG_ERROR_ARGS = """
 Error: Invalid amount of arguments
-Usage: main.py <file.xlsx> <file.txt>
-"""
-ERROR_XL_FILE_NOT_FOUND = """
+""" + MSG_USAGE
+MSG_ERROR_XL_FILE_NOT_FOUND = """
 Error: Spredsheet file not found
-Usage: main.py <file.xlsx> <file.txt>
-"""
-ERROR_TXT_FILE_NOT_FOUND = """
+""" + MSG_USAGE
+MSG_ERROR_TXT_FILE_NOT_FOUND = """
 Error: Text file not found
-Usage: main.py <file.xlsx> <file.txt>
-"""
+""" + MSG_USAGE
 
 if len(argv) != 3:
-    print(ERROR_ARGS)
+    print(MSG_ERROR_ARGS)
     exit(EXIT_ERROR_INVALID_ARGS_AMOUNT)
 
 if search(".xlsx", argv[1]) is None or search(".txt", argv[2]) is None:
-    print(ERROR_ARGS)
+    print(MSG_ERROR_ARGS)
     exit(EXIT_ERROR_INVALID_ARGS)
 
 XLFILEPATH = argv[1]
 TXTFILEPATH = argv[2]
 
 if not path.isfile(XLFILEPATH):
-    print(ERROR_XL_FILE_NOT_FOUND)
+    print(MSG_ERROR_XL_FILE_NOT_FOUND)
     exit(EXIT_ERROR_FILE_NOT_FOUND)
 
 if not path.isfile(TXTFILEPATH):
-    print(ERROR_TXT_FILE_NOT_FOUND)
+    print(MSG_ERROR_TXT_FILE_NOT_FOUND)
     exit(EXIT_ERROR_FILE_NOT_FOUND)
 
 
