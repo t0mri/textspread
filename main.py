@@ -25,7 +25,7 @@ if len(argv) != 3:
     print(ERROR_ARGS)
     exit(EXIT_ERROR_INVALID_ARGS_AMOUNT)
 
-if search(".xlsx", argv[1]) == None or search(".txt", argv[2]) == None:
+if search(".xlsx", argv[1]) is None or search(".txt", argv[2]) is None:
     print(ERROR_ARGS)
     exit(EXIT_ERROR_INVALID_ARGS)
 
